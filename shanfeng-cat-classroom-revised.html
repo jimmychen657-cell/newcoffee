@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="山風咖啡教學示範網站：安靜工作與午後休息的咖啡廳資訊。">
+<title>山風咖啡｜一杯咖啡，留一段安靜的時間</title>
+<style>
+:root{--ink:#3d2b22;--brown:#4c3428;--brown2:#6d4a37;--cream:#fbf3e8;--paper:#fffdf8;--tan:#e7d1b8;--line:#e6d5c3;--muted:#75665b;--orange:#bc8154;--green:#536c52;--max:1100px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:82px}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;line-height:1.7}
+a{color:inherit;text-decoration:none}button{font:inherit}.container{width:min(calc(100% - 36px),var(--max));margin:auto}
+header{position:sticky;top:0;z-index:10;background:rgba(255,253,248,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{font-family:Georgia,"Noto Serif TC",serif;font-size:24px;font-weight:800;letter-spacing:.08em;line-height:1.2}
+.brand small{display:block;font:10px/1.4 system-ui,sans-serif;letter-spacing:.22em;color:var(--muted);margin-left:29px}
+.brand-mark{margin-right:6px;color:var(--orange)}
+.nav-links{display:flex;align-items:center;gap:22px;font-size:14px}.nav-links a:hover{color:var(--orange)}
+.menu-btn{display:none;background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:7px 11px;color:var(--ink)}
+.hero{position:relative;overflow:hidden;background:var(--brown);color:#fff;padding:64px 0 58px}
+.hero:before{content:"";position:absolute;right:-75px;top:-100px;width:330px;height:330px;border:1px solid rgba(255,255,255,.13);border-radius:50%;box-shadow:0 0 0 30px rgba(255,255,255,.025),0 0 0 65px rgba(255,255,255,.025)}
+.hero:after{content:"🐾";position:absolute;right:8%;bottom:25px;font-size:38px;opacity:.24;transform:rotate(-18deg)}
+.hero-inner{position:relative;z-index:1;max-width:760px}
+.eyebrow{font-size:12px;letter-spacing:.18em;color:#e7c9a9;font-weight:700}
+h1,h2,h3{font-family:Georgia,"Noto Serif TC","Songti TC",serif}
+h1{font-size:clamp(43px,8vw,76px);line-height:1.12;letter-spacing:.08em;margin:12px 0}
+.tagline{font-size:clamp(20px,3vw,27px);margin:0 0 10px}
+.hero-copy{max-width:650px;color:#f0e4d8;margin:0 0 22px}
+.quick-facts{display:flex;flex-wrap:wrap;gap:9px;margin:22px 0 27px}
+.pill{border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.07);border-radius:999px;padding:7px 12px;font-size:13px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;justify-content:center;align-items:center;min-height:47px;padding:10px 20px;border-radius:15px;font-weight:750;border:1px solid transparent}
+.btn-primary{background:#f7ead9;color:var(--ink)}.btn-secondary{border-color:rgba(255,255,255,.55);color:#fff}
+section{padding:66px 0}.section-kicker{font-size:11px;letter-spacing:.2em;color:var(--orange);font-weight:800;margin-bottom:5px}
+h2{font-size:clamp(29px,4vw,40px);line-height:1.3;margin:0 0 14px}
+.lead{color:var(--muted);max-width:720px;margin:0 0 25px}
+.about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:stretch}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:27px}
+.story p{margin:0 0 12px}.story p:last-child{margin-bottom:0}
+.cat-art{min-height:260px;border-radius:24px;background:#ead9c4;display:grid;place-items:center;position:relative;overflow:hidden;border:1px solid #ddc4a8}
+.cat-art:before,.cat-art:after{content:"";position:absolute;border-radius:50%;background:rgba(255,253,248,.35)}
+.cat-art:before{width:220px;height:220px;left:-55px;top:-60px}.cat-art:after{width:170px;height:170px;right:-40px;bottom:-55px}
+.cat-face{position:relative;z-index:1;width:140px;height:122px;background:#bd865d;border-radius:48% 48% 44% 44%;box-shadow:inset -8px -6px 0 rgba(94,56,35,.08)}
+.cat-face:before,.cat-face:after{content:"";position:absolute;top:-22px;width:0;height:0;border-left:27px solid transparent;border-right:27px solid transparent;border-bottom:48px solid #bd865d}
+.cat-face:before{left:4px;transform:rotate(-12deg)}.cat-face:after{right:4px;transform:rotate(12deg)}
+.eyes{position:absolute;left:32px;right:32px;top:43px;display:flex;justify-content:space-between}.eyes i{width:8px;height:12px;background:#3d2b22;border-radius:50%}
+.nose{position:absolute;top:64px;left:calc(50% - 5px);width:10px;height:7px;background:#714633;clip-path:polygon(0 0,100% 0,50% 100%)}
+.whiskers{position:absolute;top:70px;left:0;right:0;font-size:25px;color:#714633;text-align:center;letter-spacing:36px;padding-left:27px}
+.art-note{position:absolute;bottom:14px;z-index:2;font-size:12px;color:#684b37;background:rgba(255,253,248,.78);padding:5px 10px;border-radius:999px}
+.menu-section{background:#f3e5d4}.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.menu-card{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:23px;position:relative}
+.menu-card h3{font-size:23px;margin:0 0 10px}.menu-card h3 span{font:12px system-ui,sans-serif;color:var(--muted);margin-left:6px}
+.menu-item{padding:13px 0;border-bottom:1px dashed var(--line)}.menu-item:last-child{border-bottom:0;padding-bottom:0}
+.item-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-weight:750}.price{white-space:nowrap;color:var(--brown2)}
+.menu-item p{font-size:13px;color:var(--muted);margin:3px 0 0}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.feature{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:21px}
+.feature-icon{font-size:24px}.feature h3{font-family:inherit;font-size:17px;margin:6px 0}.feature p{font-size:14px;color:var(--muted);margin:0}
+.rules{margin-top:16px;background:#f0e1cf;border:1px solid #dfc7ae;border-radius:20px;padding:21px}
+.rules h3{margin:0 0 8px;font-size:20px}.rules ul{margin:0;padding-left:21px}.rules li{margin:5px 0}
+.hours{background:#ead7c0}.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.info-card{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:24px}
+.info-card h3{font-size:22px;margin:0 0 12px}.info-row{display:grid;grid-template-columns:95px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.info-row:last-child{border-bottom:0}.label{color:var(--muted);font-size:14px}.value{font-size:15px}
+.pending{color:#80512f;background:#f8ebd9;border:1px dashed #c79d78;border-radius:12px;padding:12px 14px;font-size:14px}
+.contact{background:var(--brown);color:#fff}.contact .section-kicker{color:#e6c7a7}.contact .lead{color:#e9d9ca}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.contact-card{border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:22px;background:rgba(255,255,255,.04)}
+.contact-card h3{font-family:inherit;font-size:18px;margin:0 0 5px}.contact-card p{color:#e9d9ca;margin:0;font-size:14px}
+footer{background:#302119;color:#d8c7b7;padding:22px 0;font-size:12px}.footer-inner{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.disclaimer{font-size:12px;color:var(--muted);margin-top:18px}
+@media(max-width:800px){.menu-btn{display:block}.nav{min-height:64px}.nav-links{display:none;position:absolute;top:68px;left:14px;right:14px;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:10px;box-shadow:0 12px 28px #3d2b2218;flex-direction:column;align-items:stretch;gap:0}.nav-links.open{display:flex}.nav-links a{padding:10px 12px}.about-grid,.info-grid{grid-template-columns:1fr}.cat-art{min-height:220px}.menu-grid{grid-template-columns:1fr}.feature-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.container{width:calc(100% - 28px)}.hero{padding:50px 0 46px}.hero:after{right:7%;bottom:16px}.quick-facts{gap:7px}.pill{font-size:12px;padding:6px 9px}.actions{flex-direction:column}.btn{width:100%}section{padding:52px 0}.panel,.menu-card,.info-card{padding:20px}.feature-grid,.contact-grid{grid-template-columns:1fr}.info-row{grid-template-columns:78px 1fr}.hero-inner{padding-bottom:14px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="container nav">
+  <a class="brand" href="#top"><span class="brand-mark">🐾</span>山風咖啡<small>YAMAKAZE COFFEE · 教學示範</small></a>
+  <button class="menu-btn" id="menuBtn" aria-label="開啟選單" aria-expanded="false">☰ 選單</button>
+  <nav class="nav-links" id="navLinks" aria-label="主要導覽">
+   <a href="#about">關於我們</a><a href="#menu">查看菜單</a><a href="#space">空間與規則</a><a href="#hours">營業資訊</a><a href="#contact">聯絡與行動</a>
+  </nav>
+ </div>
+</header>
+<main>
+<section class="hero" id="top">
+ <div class="container hero-inner">
+  <div class="eyebrow">A QUIET COFFEE BREAK · TAICHUNG EAST DISTRICT</div>
+  <h1>山風咖啡</h1>
+  <p class="tagline">給想安靜工作與午後休息的人，一杯咖啡和清楚的停留資訊。</p>
+  <p class="hero-copy">先看看菜單、插座與 Wi-Fi，再確認什麼時段適合久坐。這是一份課堂練習網站，店家資料為教學虛構案例。</p>
+  <div class="quick-facts"><span class="pill">🔌 長桌 6 席附插座</span><span class="pill">📶 免費 Wi-Fi</span><span class="pill">☕ 平日 14:00 後不限時</span><span class="pill">⏱ 其他指定時段限時 120 分鐘</span></div>
+  <div class="actions"><a class="btn btn-primary" href="#menu">查看菜單 ↓</a><a class="btn btn-secondary" href="#space">先看座位與停留規則</a></div>
+ </div>
+</section>
+<section id="about">
+ <div class="container">
+  <div class="section-kicker">ABOUT US</div><h2>讓你先知道，再決定是否適合。</h2>
+  <div class="about-grid">
+   <div class="panel story">
+    <p>山風咖啡是一個虛構的課堂練習店。我們希望替需要安靜工作與短暫休息的人，整理清楚的餐飲與空間資訊。</p>
+    <p>先知道價格、座位和停留規則，再決定這裡是否適合自己。</p>
+    <p>這個網站以溫暖的棕色、奶油色和圓角搭配簡單貓咪插畫，讓版面親切但不干擾閱讀。</p>
+   </div>
+   <div class="cat-art" role="img" aria-label="貓咪風格裝飾插畫，僅作網站視覺主題">
+    <div class="cat-face"><div class="eyes"><i></i><i></i></div><div class="nose"></div><div class="whiskers">⌁⌁</div></div>
+    <div class="art-note">貓咪插畫為裝飾，不代表店內有貓</div>
+   </div>
+  </div>
+ </div>
+</section>
+<section class="menu-section" id="menu">
+ <div class="container">
+  <div class="section-kicker">MENU</div><h2>今天想喝什麼、吃點什麼？</h2>
+  <p class="lead">以下為課堂資料卡指定的九項品項與價格，金額皆為新臺幣。</p>
+  <div class="menu-grid">
+   <article class="menu-card"><h3>咖啡 <span>COFFEE</span></h3>
+    <div class="menu-item"><div class="item-top"><span>美式咖啡</span><span class="price">NT$ 120</span></div><p>清爽的黑咖啡，可選冷或熱。</p></div>
+    <div class="menu-item"><div class="item-top"><span>原味拿鐵</span><span class="price">NT$ 150</span></div><p>咖啡搭配鮮奶，可選冷或熱。</p></div>
+    <div class="menu-item"><div class="item-top"><span>今日手沖</span><span class="price">NT$ 180</span></div><p>依當日教學示例呈現風味。</p></div>
+   </article>
+   <article class="menu-card"><h3>非咖啡 <span>NON-COFFEE</span></h3>
+    <div class="menu-item"><div class="item-top"><span>紅茶</span><span class="price">NT$ 100</span></div><p>無奶的清爽茶飲，可選冷或熱。</p></div>
+    <div class="menu-item"><div class="item-top"><span>熱可可</span><span class="price">NT$ 140</span></div><p>可可搭配鮮奶，供應熱飲。</p></div>
+    <div class="menu-item"><div class="item-top"><span>柚香氣泡飲</span><span class="price">NT$ 130</span></div><p>柚香搭配氣泡水，供應冷飲。</p></div>
+   </article>
+   <article class="menu-card"><h3>甜點 <span>DESSERT</span></h3>
+    <div class="menu-item"><div class="item-top"><span>原味司康</span><span class="price">NT$ 90</span></div><p>外層微酥，附一份果醬。</p></div>
+    <div class="menu-item"><div class="item-top"><span>檸檬磅蛋糕</span><span class="price">NT$ 110</span></div><p>帶檸檬香氣的切片蛋糕。</p></div>
+    <div class="menu-item"><div class="item-top"><span>可可布朗尼</span><span class="price">NT$ 120</span></div><p>濃郁可可風味的方形蛋糕。</p></div>
+   </article>
+  </div>
+ </div>
+</section>
+<section id="space">
+ <div class="container">
+  <div class="section-kicker">SPACE & RULES</div><h2>座位、插座與停留規則</h2>
+  <p class="lead">把重要規則先說清楚，讓帶筆電工作或來休息的客人更好安排時間。</p>
+  <div class="feature-grid">
+   <article class="feature"><div class="feature-icon">🪑</div><h3>共 18 席</h3><p>店內共 18 個座位；不同座位設備可能不同。</p></article>
+   <article class="feature"><div class="feature-icon">🔌</div><h3>長桌 6 席有插座</h3><p>長桌的 6 個座位附插座，其他座位不保證有插座。</p></article>
+   <article class="feature"><div class="feature-icon">📶</div><h3>免費 Wi-Fi</h3><p>提供免費 Wi-Fi；不承諾連線速度，也不公開密碼。</p></article>
+  </div>
+  <div class="rules"><h3>⏰ 停留與消費規則</h3><ul>
+   <li><strong>週一、週三至週五 14:00 後：</strong>不限時。</li>
+   <li><strong>營業平日 14:00 前，以及週末：</strong>限時 120 分鐘。</li>
+   <li><strong>每人低消：</strong>至少一杯飲品；不另加服務費。</li>
+  </ul></div>
+ </div>
+</section>
+<section class="hours" id="hours">
+ <div class="container">
+  <div class="section-kicker">OPENING INFORMATION</div><h2>營業資訊</h2>
+  <div class="info-grid">
+   <article class="info-card"><h3>營業時間與位置</h3>
+    <div class="info-row"><div class="label">營業時間</div><div class="value">週一、週三至週日<br>11:00–20:00</div></div>
+    <div class="info-row"><div class="label">公休日</div><div class="value">每週二公休</div></div>
+    <div class="info-row"><div class="label">區域</div><div class="value">教學情境設定於臺中市東區；不是可供導航的地址。</div></div>
+    <div class="info-row"><div class="label">地址</div><div class="value">待教師核對</div></div>
+   </article>
+   <article class="info-card"><h3>導航與電話</h3>
+    <p class="pending">地址、電話與 Google Maps 尚待教師核對。核對完成前不啟用導航按鈕，也不提供撥號連結。</p>
+    <div class="info-row"><div class="label">電話</div><div class="value">待教師核對</div></div>
+    <div class="info-row"><div class="label">Google Maps</div><div class="value">待教師核對</div></div>
+   </article>
+  </div>
+  <p class="disclaimer">教學虛構案例，非真實營業店家；請勿據此到店或聯絡。</p>
+ </div>
+</section>
+<section class="contact" id="contact">
+ <div class="container">
+  <div class="section-kicker">CONTACT & NEXT STEP</div><h2>先看菜單，再確認資訊</h2>
+  <p class="lead">目前可使用頁內導覽查看菜單與空間規則。聯絡與導航資料尚未核對，不會提供虛構帳號或連結。</p>
+  <div class="contact-grid">
+   <article class="contact-card"><h3>查看菜單</h3><p>九項品項與價格已列於菜單區，可點選下方入口查看。</p><p style="margin-top:13px"><a class="btn btn-primary" href="#menu">前往菜單</a></p></article>
+   <article class="contact-card"><h3>聯絡資料</h3><p>電話、LINE 與 Instagram 尚未提供；待核對後再補上。</p></article>
+  </div>
+ </div>
+</section>
+</main>
+<footer><div class="container footer-inner"><span>山風咖啡｜課堂練習網站</span><span>🐾 貓咪插畫僅為視覺裝飾，並不表示店內有貓。</span></div></footer>
+<script>
+const btn=document.getElementById("menuBtn"),nav=document.getElementById("navLinks");
+btn.addEventListener("click",()=>{const open=nav.classList.toggle("open");btn.setAttribute("aria-expanded",String(open));});
+nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{nav.classList.remove("open");btn.setAttribute("aria-expanded","false");}));
+</script>
+</body>
+</html>
